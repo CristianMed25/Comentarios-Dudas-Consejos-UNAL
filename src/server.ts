@@ -94,6 +94,10 @@ apiRouter.get('/recursos', (req, res) => {
   res.json(recursos);
 });
 
+apiRouter.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.use('/api', apiRouter);
 
 
