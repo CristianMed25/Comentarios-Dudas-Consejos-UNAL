@@ -1,24 +1,10 @@
 import { useComentarios } from "../hooks/useComentarios";
 import ComentarioCard from "../components/ui/ComentarioCard";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, Download } from "lucide-react";
-import { useRef } from "react";
 
 export default function HomePage() {
-  const { allComentarios, exportComentarios, importComentarios } = useComentarios();
+  const { allComentarios } = useComentarios();
   const comentarios = allComentarios();
-  const importFileRef = useRef<HTMLInputElement>(null);
-
-  const handleImportClick = () => {
-    importFileRef.current?.click();
-  };
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      importComentarios(file);
-    }
-  };
 
   return (
     <>
@@ -53,31 +39,6 @@ export default function HomePage() {
           </div>
         )}
       </motion.div>
-
-      {/* Botones Flotantes de Importar/Exportar */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <input
-          type="file"
-          ref={importFileRef}
-          className="hidden"
-          accept=".json"
-          onChange={handleFileChange}
-        />
-        <button
-          onClick={handleImportClick}
-          className="flex items-center justify-center gap-2 w-14 h-14 rounded-full bg-emerald-600 text-white shadow-lg hover:bg-emerald-700 transition-all duration-300 group"
-          title="Importar Comentarios"
-        >
-          <Upload size={24} />
-        </button>
-        <button
-          onClick={exportComentarios}
-          className="flex items-center justify-center gap-2 w-14 h-14 rounded-full bg-emerald-600 text-white shadow-lg hover:bg-emerald-700 transition-all duration-300 group"
-          title="Exportar Comentarios"
-        >
-          <Download size={24} />
-        </button>
-      </div>
     </>
   );
 } 

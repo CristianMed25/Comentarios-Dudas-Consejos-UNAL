@@ -1,7 +1,7 @@
 export type Comentario = {
   id: string;
   carrera: string;
-  semestre: number;
+  semestre: string;
   texto: string;
-  createdAt?: string;
+  created_at: string;
 }; 

@@ -28,6 +28,8 @@ export default function Sidebar() {
           className="w-full bg-slate-700 border border-slate-600 rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-emerald-500 focus:border-emerald-500"
         />
       </div>
+      <div className="border-t border-slate-700 my-4 -mx-4"></div>
+      <p className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Carreras</p>
       <nav className="flex-1 overflow-y-auto pr-2 -mr-2 scrollbar-thin scrollbar-thumb-slate-600 hover:scrollbar-thumb-slate-500 scrollbar-track-slate-800">
         <div className="flex flex-col space-y-1">
           {filteredCarreras.map((carrera) => (

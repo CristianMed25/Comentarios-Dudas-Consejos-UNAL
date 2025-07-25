@@ -1,0 +1,72 @@
+[
+  {
+    "carrera": "Arquitectura",
+    "semestre": 1,
+    "texto": "Descansen, el sueño permite que las ideas fluyen de mejor manera. No le tengan miedo al lápiz, dibujen mucho así consideren que no lo hacen bien.",
+    "id": "35dceda0-fe2e-4a17-ba48-bd2ae0db02b6",
+    "createdAt": "2025-07-22T20:57:56.566Z"
+  },
+  {
+    "carrera": "Geología",
+    "semestre": 3,
+    "texto": "No se mate haciendo los trabajos de Moreno :)",
+    "id": "1cb46d51-139c-4a09-8f8b-185dde4f5021",
+    "createdAt": "2025-07-22T20:45:26.503Z"
+  },
+  {
+    "carrera": "Derecho",
+    "semestre": 9,
+    "texto": "No dejen todos los seminarios de investigación para el final",
+    "id": "1f365b57-0607-4e7e-a639-e414a4c61cc3",
+    "createdAt": "2025-07-22T20:44:25.065Z"
+  },
+  {
+    "carrera": "Enfermería",
+    "semestre": 9,
+    "texto": "vean asignaturas con Rubby si quieren notas altas",
+    "id": "d1d43e29-a1bf-4b47-94da-20acc1f62387",
+    "createdAt": "2025-07-22T20:39:33.899Z"
+  },
+  {
+    "carrera": "Ingeniería Civil",
+    "semestre": 8,
+    "texto": "Hágale caso al que dice lo de Ferney, Grasso error",
+    "id": "d285b993-1b1b-44bf-b639-fda7efb86e48",
+    "createdAt": "2025-07-22T20:37:54.363Z"
+  },
+  {
+    "carrera": "Ingeniería Civil",
+    "semestre": 8,
+    "texto": "Por lo que más quiera en esta vida, no meta nada con Ferney.",
+    "id": "422dfc1b-c2e1-4b37-aef7-3a2093f89435",
+    "createdAt": "2025-07-22T20:37:34.608Z"
+  },
+  {
+    "carrera": "Ingeniería Agrícola",
+    "semestre": 4,
+    "texto": "El viaje de suelos es la experiencia que más acerca a cada estudiante a la carrera, disfrutenlo.",
+    "id": "05baef33-df0a-4b00-b101-639fec5820e1",
+    "createdAt": "2025-07-22T20:30:27.114Z"
+  },
+  {
+    "carrera": "Ingeniería Civil",
+    "semestre": 1,
+    "texto": "No metan con Maritzabel, solo si les encanta esa línea",
+    "id": "8c8573e2-4f98-4add-b38b-99d07f6b22fc",
+    "createdAt": "2025-07-22T20:24:16.050Z"
+  },
+  {
+    "carrera": "Ingeniería Civil",
+    "semestre": 1,
+    "texto": "Metan on maritzabel para sufrir y aprender mucho, cualquier materia que ella dicte",
+    "id": "410d516c-2b32-42a3-a1ea-03e69e52fa75",
+    "createdAt": "2025-07-22T20:23:39.861Z"
+  },
+  {
+    "carrera": "Ingeniería Electrónica",
+    "semestre": 7,
+    "texto": "¿como implementar un filtro para una frecuencia especifica?",
+    "id": "82733728-e294-4cb3-9262-b057d34d993a",
+    "createdAt": "2025-07-22T20:22:56.406Z"
+  }
+] 
