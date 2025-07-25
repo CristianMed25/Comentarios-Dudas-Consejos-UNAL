@@ -38,7 +38,7 @@ export function useComentarios() {
       }
 
       const newComentario = await response.json();
-      setComentarios((prevComentarios) => [newComentario, ...prevComentarios]);
+    setComentarios((prevComentarios) => [newComentario, ...prevComentarios]);
     } catch (error) {
       console.error(error);
     }
