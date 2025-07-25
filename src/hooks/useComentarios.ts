@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Comentario } from "../types";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5432";
+const API_URL = ''; // Usar ruta relativa para que funcione en Vercel
 
 export function useComentarios() {
   const [comentarios, setComentarios] = useState<Comentario[]>([]);

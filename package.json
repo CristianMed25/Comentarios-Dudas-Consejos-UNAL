@@ -5,13 +5,9 @@
   "type": "module",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "concurrently \"npm:dev:front\" \"npm:dev:back\"",
-    "dev:front": "vite",
-    "dev:back": "tsx watch src/server.ts",
-    "build": "npm run build:front && npm run build:back",
-    "build:front": "vite build",
-    "build:back": "tsc -p tsconfig.node.json",
-    "start": "node dist/server.js",
+    "dev": "vercel dev",
+    "build": "vite build",
+    "start": "echo \"Este script no es necesario para Vercel, el despliegue se maneja automáticamente\"",
     "db:seed": "tsx scripts/seed.ts",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
@@ -39,10 +35,9 @@
     "@types/pg": "^8.11.6",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "autoprefixer": "^10.4.18",
-    "concurrently": "^9.2.0",
     "eslint": "^9.9.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
@@ -53,9 +48,9 @@
     "prettier": "^3.2.5",
     "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.4.1",
-    "tsx": "^4.20.3",
     "typescript": "~5.4.0",
     "typescript-eslint": "^8.3.0",
+    "vercel": "^35.2.1",
     "vite": "^5.2.8"
   }
 }

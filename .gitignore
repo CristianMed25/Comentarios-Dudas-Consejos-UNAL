@@ -25,6 +25,11 @@ dist-ssr
 .env
 *.pem
 
+# Vercel
+.vercel
+
 # dotenv
 .env
 .env*.local
+
+.vercel

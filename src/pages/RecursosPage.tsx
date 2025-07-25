@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5432";
+const API_URL = ''; // Usar ruta relativa para que funcione en Vercel
 
 interface Recurso {
   id: number;

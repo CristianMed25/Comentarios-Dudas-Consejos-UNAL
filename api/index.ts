@@ -2,55 +2,49 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { Pool } from 'pg';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3001;
-
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 app.use(cors());
 app.use(express.json());
 
-const apiRouter = express.Router();
-
 // Rutas de la API
-apiRouter.get('/comments', async (req, res) => {
+app.get('/api/comments', async (_req, res) => {
   try {
     const result = await pool.query('SELECT * FROM comments ORDER BY created_at DESC');
     res.json(result.rows);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-apiRouter.post('/comments', async (req, res) => {
+app.post('/api/comments', async (req, res) => {
   try {
     const { texto, carrera, semestre } = req.body;
-
     if (!texto || !carrera || !semestre) {
       return res.status(400).json({ error: 'Los campos texto, carrera y semestre son obligatorios' });
     }
-
     const newComentario = await pool.query(
       'INSERT INTO comments (texto, carrera, semestre, created_at) VALUES ($1, $2, $3, $4) RETURNING *',
       [texto, carrera, semestre, Date.now()]
     );
-
     res.status(201).json(newComentario.rows[0]);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-apiRouter.get('/recursos', (req, res) => {
+app.get('/api/recursos', (_req, res) => {
   const recursos = [
     {
       id: 1,
@@ -94,27 +88,9 @@ apiRouter.get('/recursos', (req, res) => {
   res.json(recursos);
 });
 
-apiRouter.get('/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.status(200).send('OK');
 });
 
-app.use('/api', apiRouter);
-
-
-// Servir archivos estáticos del frontend en producción
-if (process.env.NODE_ENV === 'production') {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  
-  // La carpeta de build del frontend ahora se llamará 'dist/client'
-  app.use(express.static(path.join(__dirname, 'client')));
-
-  // Para todas las demás rutas, servir el index.html del frontend
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'index.html'));
-  });
-}
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-}); 
+// Importante: Exportar la app para que Vercel la use
+export default app; 
